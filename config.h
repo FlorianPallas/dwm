@@ -46,10 +46,13 @@ static const int resizehints = 1;
 static const int lockfullscreen = 1;
 
 // Layouts
+#include "fibonacci.c"
 static const Layout layouts[] = {
-  { "[]=", tile },
+  { "[\\]", dwindle },
   { "><>", NULL },
   { "[M]", monocle },
+  { "[]=", tile },
+  { "[@]", spiral },
 };
 
 // dmenu
@@ -58,9 +61,11 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, NULL };
 
 static Key keys[] = {
   // Layouts
-  { MODKEY, XK_t, setlayout, {.v = &layouts[0]} },
+  { MODKEY, XK_d, setlayout, {.v = &layouts[0]} },
   { MODKEY, XK_f, setlayout, {.v = &layouts[1]} },
   { MODKEY, XK_m, setlayout, {.v = &layouts[2]} },
+  { MODKEY, XK_t, setlayout, {.v = &layouts[3]} },
+  { MODKEY, XK_s, setlayout, {.v = &layouts[4]} },
   { MODKEY, XK_space, setlayout, {0} },
   { MODKEY|ShiftMask, XK_space, togglefloating, {0} },
 
@@ -85,8 +90,6 @@ static Key keys[] = {
   // Focus
   { MODKEY, XK_j, focusstack, {.i = +1 } },
   { MODKEY, XK_k, focusstack, {.i = -1 } },
-  { MODKEY, XK_i, incnmaster, {.i = +1 } },
-  { MODKEY, XK_d, incnmaster, {.i = -1 } },
   { MODKEY, XK_comma, focusmon, {.i = -1 } },
   { MODKEY, XK_period, focusmon, {.i = +1 } },
 
