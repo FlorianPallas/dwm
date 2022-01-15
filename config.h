@@ -39,6 +39,13 @@ static const Rule rules[] = {
   { "Firefox", NULL, NULL, 1 << 8, 0, -1 },
 };
 
+// Systray
+static const unsigned int systraypinning = 1;
+static const unsigned int systrayonleft = 0;
+static const unsigned int systrayspacing = 5;
+static const int systraypinningfailfirst = 1;
+static const int showsystray = 1;
+
 // Misc
 static const float mfact = 0.5;
 static const int nmaster = 1;
