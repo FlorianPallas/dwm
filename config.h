@@ -17,6 +17,13 @@ static const int showbar = 1;
 static const int topbar = 1;
 static const char *fonts[] = { "monospace:size=10" };
 
+// Gaps
+static const unsigned int gappih = 10;
+static const unsigned int gappiv = 10;
+static const unsigned int gappoh = 10;
+static const unsigned int gappov = 10;
+static int smartgaps = 1;
+
 // Colors
 static const char col_gray1[] = "#212121";
 static const char col_gray2[] = "#424242";
@@ -53,7 +60,11 @@ static const int resizehints = 1;
 static const int lockfullscreen = 1;
 
 // Layouts
+#define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
+#include "vanitygaps.c"
+
 static const Layout layouts[] = {
+  { "[\\]", dwindle },
   { "[]=", tile },
   { "><>", NULL },
   { "[M]", monocle },
@@ -65,9 +76,10 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, NULL };
 
 static Key keys[] = {
   // Layouts
-  { MODKEY, XK_t, setlayout, {.v = &layouts[0]} },
-  { MODKEY, XK_f, setlayout, {.v = &layouts[1]} },
-  { MODKEY, XK_m, setlayout, {.v = &layouts[2]} },
+  { MODKEY, XK_d, setlayout, {.v = &layouts[0]} },
+  { MODKEY, XK_t, setlayout, {.v = &layouts[1]} },
+  { MODKEY, XK_f, setlayout, {.v = &layouts[2]} },
+  { MODKEY, XK_m, setlayout, {.v = &layouts[3]} },
   { MODKEY, XK_space, setlayout, {0} },
   { MODKEY|ShiftMask, XK_space, togglefloating, {0} },
 
@@ -92,8 +104,6 @@ static Key keys[] = {
   // Focus
   { MODKEY, XK_j, focusstack, {.i = +1 } },
   { MODKEY, XK_k, focusstack, {.i = -1 } },
-  { MODKEY, XK_i, incnmaster, {.i = +1 } },
-  { MODKEY, XK_d, incnmaster, {.i = -1 } },
   { MODKEY, XK_comma, focusmon, {.i = -1 } },
   { MODKEY, XK_period, focusmon, {.i = +1 } },
 
