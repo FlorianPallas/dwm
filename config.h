@@ -119,7 +119,7 @@ static Key keys[] = {
   { 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("pamixer -i 5") },
 
   // Visibility
-  { MODKEY, XK_b, togglebar, {0} },
+  { MODKEY, XK_x, togglebar, {0} },
 
   // Close
   { MODKEY|ShiftMask, XK_c, killclient, {0} },
