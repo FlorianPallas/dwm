@@ -131,9 +131,9 @@ static Key keys[] = {
   { 0, XF86XK_AudioNext, spawn, SHCMD("playerctl next") },
 
   // Volume
-  { 0, XF86XK_AudioMute, spawn, SHCMD("pamixer -t") },
-  { 0, XF86XK_AudioLowerVolume, spawn, SHCMD("pamixer -d 5") },
-  { 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("pamixer -i 5") },
+  { 0, XF86XK_AudioMute, spawn, SHCMD("pamixer -t && pkill -RTMIN+10 dwmblocks") },
+  { 0, XF86XK_AudioLowerVolume, spawn, SHCMD("pamixer -d 5 && pkill -RTMIN+10 dwmblocks") },
+  { 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("pamixer -i 5 && pkill -RTMIN+10 dwmblocks") },
 
   // Visibility
   { MODKEY, XK_x, togglebar, {0} },
