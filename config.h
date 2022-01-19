@@ -124,6 +124,9 @@ static Key keys[] = {
   // File explorer
   { MODKEY, XK_e, spawn, SHCMD("nautilus") },
 
+  // Locker
+  { MODKEY|ShiftMask, XK_l, spawn, SHCMD("slock") },
+
   // Media control
   { 0, XF86XK_AudioPlay, spawn, SHCMD("playerctl play-pause") },
   { 0, XF86XK_AudioStop, spawn, SHCMD("playerctl stop") },
