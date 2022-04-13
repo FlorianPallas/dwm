@@ -138,6 +138,10 @@ static Key keys[] = {
   { 0, XF86XK_AudioLowerVolume, spawn, SHCMD("pamixer -d 5 && pkill -RTMIN+10 dwmblocks") },
   { 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("pamixer -i 5 && pkill -RTMIN+10 dwmblocks") },
 
+  // Brightness
+  {0, XF86XK_MonBrightnessUp, spawn, SHCMD("light -A 10 && pkill -RTMIN+11 dwmblocks") },
+  {0, XF86XK_MonBrightnessDown, spawn, SHCMD("light -U 10 && pkill -RTMIN+11 dwmblocks") },
+
   // Visibility
   { MODKEY, XK_x, togglebar, {0} },
 
