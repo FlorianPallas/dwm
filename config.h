@@ -127,6 +127,9 @@ static Key keys[] = {
   // Locker
   { MODKEY|ShiftMask, XK_l, spawn, SHCMD("slock") },
 
+  // Screenshot
+  { ShiftMask, XK_Print, spawn, SHCMD("maim -s -u | xclip -selection clipboard -t image/png -i") },
+
   // Media control
   { 0, XF86XK_AudioPlay, spawn, SHCMD("playerctl play-pause") },
   { 0, XF86XK_AudioStop, spawn, SHCMD("playerctl stop") },
