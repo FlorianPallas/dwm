@@ -122,7 +122,10 @@ static Key keys[] = {
   { MODKEY, XK_b, spawn, SHCMD("chromium") },
 
   // File explorer
-  { MODKEY, XK_e, spawn, SHCMD("nautilus") },
+  { MODKEY, XK_e, spawn, SHCMD("pcmanfm") },
+
+  // IDE
+  { MODKEY, XK_c, spawn, SHCMD("code") },
 
   // Locker
   { MODKEY|ShiftMask, XK_l, spawn, SHCMD("slock") },
@@ -142,8 +145,8 @@ static Key keys[] = {
   { 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("pamixer -i 5 && pkill -RTMIN+10 dwmblocks") },
 
   // Brightness
-  {0, XF86XK_MonBrightnessUp, spawn, SHCMD("light -A 10 && pkill -RTMIN+11 dwmblocks") },
-  {0, XF86XK_MonBrightnessDown, spawn, SHCMD("light -U 10 && pkill -RTMIN+11 dwmblocks") },
+  {0, XF86XK_MonBrightnessUp, spawn, SHCMD("brightnessctl s +10") },
+  {0, XF86XK_MonBrightnessDown, spawn, SHCMD("brightnessctl s 10-") },
 
   // Visibility
   { MODKEY, XK_x, togglebar, {0} },
